@@ -27,8 +27,44 @@ public class Calculate {
 	public static double toRadians(double degrees) {
 		return degrees * 3.14159 / 180;
 	}
+	//returns discriminant from 3 doubles a,b,c
+	public static double discriminant(double a, double b, double c) {
+		return b * b - 4 * a * c;
+	}
+	//returns improper fraction(String) when input mixed number(3 ints)
+	public static String toImproperFrac(int wholeNum, int numer, int denom) {
+		int fracNumer = denom * wholeNum + numer;
+		return fracNumer + "/" + denom;
+	}
+	//returns mixed number(String) when input numerator and denominator 
+	public static String toMixedNum(int numer, int demon) {
+		int wholeNum = numer / demon;
+		int newNumer = numer % demon;
+		return wholeNum +"_" + newNumer + "/" + demon;
+	}
+	public static String foil(int a, int b, int c, int d, String x) {
+		int f = a * c;
+		int o = a * d;
+		int i = b * c;
+		int l = b * d;
+		int oi = o + i;
+		return f + x + "^2" + " + " + oi + x + " + " + l;
+	}
+	public static boolean isDivisibleBy(int a, int b) {
+		if(a % b == 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public static double absValue(double a) {
+		if(a < 0) {
+			return -a;
+		}else {
+			return a;
+		}
+	}
 }
-
 
 
 
