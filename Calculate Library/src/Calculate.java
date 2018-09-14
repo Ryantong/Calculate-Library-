@@ -42,6 +42,7 @@ public class Calculate {
 		int newNumer = numer % demon;
 		return wholeNum +"_" + newNumer + "/" + demon;
 	}
+	//converts (ax+b)(cx+d) to ax^2 + bx + c 
 	public static String foil(int a, int b, int c, int d, String x) {
 		int f = a * c;
 		int o = a * d;
@@ -50,6 +51,7 @@ public class Calculate {
 		int oi = o + i;
 		return f + x + "^2" + " + " + oi + x + " + " + l;
 	}
+	//returns boolean base on if int a is divisible by int b
 	public static boolean isDivisibleBy(int a, int b) {
 		if(a % b == 0) {
 			return true;
@@ -57,6 +59,7 @@ public class Calculate {
 			return false;
 		}
 	}
+	//returns absolute value(double) of inputed double 
 	public static double absValue(double a) {
 		if(a < 0) {
 			return -a;
@@ -64,6 +67,29 @@ public class Calculate {
 			return a;
 		}
 	}
+	//returns the larger value double of the two inputed doubles
+	public static double max(double a, double b) {
+		if(a > b) {
+			return a;
+		}else {
+			return b;
+		}
+	}
+	//returns the larger value double of the three inputed doubles
+//	public static double max(double a, double b, double c) {
+//		//work on later
+//	}
+	//returns the smaller value int of the two inputed int
+	public static int min(int a, int b) {
+		if(a < b) {
+			return a;
+		}else
+			return b;
+	}
+	//returns a double rounded to 2 decimal places from inputed double
+//	public static double round2(double a) {
+//		//do later
+//	}
 }
 
 
