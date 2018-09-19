@@ -101,12 +101,8 @@ public class Calculate {
 	//returns a double rounded to 2 decimal places from inputed double
 	public static double round2(double a) {
 		a += 0.005;
-		if(a - 0.005 % 0.01 == 0.005) {
-			return a;
-		}else {
-			return a -= (a %= 0.01);
+		return a -= (a %= 0.01);
 		//works for everything except when 5 is a the end it rounds down
-		}
 	}		
 }
 
