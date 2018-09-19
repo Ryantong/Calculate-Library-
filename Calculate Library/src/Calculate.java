@@ -100,10 +100,31 @@ public class Calculate {
 	}
 	//returns a double rounded to 2 decimal places from inputed double
 	public static double round2(double a) {
-		a += 0.005;
-		return a -= (a %= 0.01);
-		//works for everything except when 5 is a the end it rounds down
-	}		
+		if(a > 0) {
+			a += 0.005;
+		}else if(a == 0) {
+			a = 0;
+		}else {
+			a -= 0.005;
+		}
+		a *= 100;
+		double b = (int)a;
+		b /= 100;
+		return b;
+	}
+	public static double exponent(double a, int b) {
+		double c = a;
+		for(int count = 1; b > count; count++) {
+			c *= a;	
+		}
+		return c;
+	}
+	public static int factorial(int a) {
+		for(int count = a-1; count >= 1; count--) {
+			a *= count;
+		}
+		return a;
+	}
 }
 
 
