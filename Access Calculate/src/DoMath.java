@@ -19,8 +19,8 @@ public class DoMath {
 		System.out.println(Calculate.isDivisibleBy(9, 3));
 		System.out.println(Calculate.absValue(-22));
 		System.out.println(Calculate.max(22, 11));
-//		System.out.println(Calculate.max(22, 11, 33));
+		System.out.println(Calculate.max(22, 11, -33));
 		System.out.println(Calculate.min(22, 11));
-		//round2
+		System.out.println(Calculate.round2(1.235));
 	}
 }

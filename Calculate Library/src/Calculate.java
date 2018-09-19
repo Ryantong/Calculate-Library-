@@ -76,9 +76,21 @@ public class Calculate {
 		}
 	}
 	//returns the larger value double of the three inputed doubles
-//	public static double max(double a, double b, double c) {
-//		//work on later
-//	}
+	public static double max(double a, double b, double c) {
+		if(a > b) {
+			if(a > c) {
+				return a;
+			}else {
+				return c;
+			}
+		}else {
+			if(b > c) {
+				return b;
+			}else {
+				return c;
+			}
+		}
+	}
 	//returns the smaller value int of the two inputed int
 	public static int min(int a, int b) {
 		if(a < b) {
@@ -87,9 +99,15 @@ public class Calculate {
 			return b;
 	}
 	//returns a double rounded to 2 decimal places from inputed double
-//	public static double round2(double a) {
-//		//do later
-//	}
+	public static double round2(double a) {
+		a += 0.005;
+		if(a - 0.005 % 0.01 == 0.005) {
+			return a;
+		}else {
+			return a -= (a %= 0.01);
+		//works for everything except when 5 is a the end it rounds down
+		}
+	}		
 }
 
 
