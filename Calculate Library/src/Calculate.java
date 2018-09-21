@@ -126,6 +126,18 @@ public class Calculate {
 		return a;
 	}
 	public static boolean isPrime(int a) {
+		int b = 2;
+		while(b < a) {
+			b++;
+			if(a == 4) {
+				return false;
+			}
+			if(a%b==0 && b!=a) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
 
 
