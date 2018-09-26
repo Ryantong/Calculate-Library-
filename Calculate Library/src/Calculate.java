@@ -159,6 +159,7 @@ public class Calculate {
 		return num1;
 	}
 	public static double sqrt(double num) {
+		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number i-idiot");
 		
 	}
 }
