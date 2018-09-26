@@ -52,79 +52,88 @@ public class Calculate {
 		return f + x + "^2" + " + " + oi + x + " + " + l;
 	}
 	//returns boolean base on if int a is divisible by int b
-	public static boolean isDivisibleBy(int a, int b) {
-		if(a % b == 0) {
+	public static boolean isDivisibleBy(int num1, int num2) {
+		if(num2 == 0)throw new IllegalArgumentException("you can't divid by 0 i-idiot");
+		if(num1 % num2 == 0) {
 			return true;
 		}else {
 			return false;
 		}
 	}
 	//returns absolute value(double) of inputed double 
-	public static double absValue(double a) {
-		if(a < 0) {
-			return -a;
+	public static double absValue(double num) {
+		if(num < 0) {
+			return -num;
 		}else {
-			return a;
+			return num;
 		}
 	}
 	//returns the larger value double of the two inputed doubles
-	public static double max(double a, double b) {
-		if(a > b) {
-			return a;
+	public static double max(double num1, double num2) {
+		if(num1 > num2) {
+			return num1;
 		}else {
-			return b;
+			return num2;
 		}
 	}
 	//returns the larger value double of the three inputed doubles
-	public static double max(double a, double b, double c) {
-		if(a > b) {
-			if(a > c) {
-				return a;
+	public static double max(double num1, double num2, double num3) {
+		if(num1 > num2) {
+			if(num1 > num3) {
+				return num1;
 			}else {
-				return c;
+				return num3;
 			}
 		}else {
-			if(b > c) {
-				return b;
+			if(num2 > num3) {
+				return num2;
 			}else {
-				return c;
+				return num3;
 			}
 		}
 	}
 	//returns the smaller value int of the two inputed int
-	public static int min(int a, int b) {
-		if(a < b) {
-			return a;
+	public static int min(int num1, int num2) {
+		if(num1 < num2) {
+			return num1;
 		}else
-			return b;
+			return num2;
 	}
 	//returns a double rounded to 2 decimal places from inputed double
-	public static double round2(double a) {
-		if(a > 0) {
-			a += 0.005;
-		}else if(a == 0) {
-			a = 0;
+	public static double round2(double dec) {
+		if(dec > 0) {
+			dec += 0.005;
+		}else if(dec == 0) {
+			dec = 0;
 		}else {
-			a -= 0.005;
+			dec -= 0.005;
 		}
-		a *= 100;
-		double b = (int)a;
+		dec *= 100;
+		double b = (int)dec;
 		b /= 100;
 		return b;
-	}
-	public static double exponent(double a, int b) {
-		double c = a;
-		for(int count = 1; b > count; count++) {
-			c *= a;	
+	}//returns value(double) for base^exp
+	public static double exponent(double base, int exp) {
+		if(exp < 0)throw new IllegalArgumentException("this program can't do negative exp =]");
+		double baseHolder = base;
+		if(exp == 0) {
+			return 1;
 		}
-		return c;
-	}
-	public static int factorial(int a) {
-		for(int count = a-1; count >= 1; count--) {
-			a *= count;
+		for(int count = 1; exp > count; count++) {
+			baseHolder *= base;	
 		}
-		return a;
-	}
+		return baseHolder;
+	}//returns factorial of inputed num
+	public static int factorial(int num) {
+		if(num < 0)throw new IllegalArgumentException("Can not input negative number i-idiot");
+		if(num == 0){
+			return 1;
+		}
+		for(int count = num-1; count >= 1; count--) {
+			num *= count;
+		}
+		return num;
+	}//returns boolean(true or false) according if it is a prime number
 	public static boolean isPrime(int a) {
 		int b = 2;
 		while(b < a) {
@@ -137,9 +146,22 @@ public class Calculate {
 			}
 		}
 		return true;
+	}//returns the greatest common factor of num1 and num2
+	public static int gcf(int num1, int num2) {
+		while (num2 != 0) {
+			int replace = num1;
+			num1 = num2;
+			num2 = replace % num2;
+		}
+		double a = (double)num1;
+		Calculate.absValue(a);
+		num1= (int)a;
+		return num1;
+	}
+	public static double sqrt(double num) {
+		
 	}
 }
-
 
 
 
