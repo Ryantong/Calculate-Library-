@@ -159,8 +159,15 @@ public class Calculate {
 		return num1;
 	}
 	public static double sqrt(double num) {
-		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number i-idiot");
-		
+		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number and get a real number i-idiot");
+		double sqRt = 0.5 * (num/5+5);
+			sqRt = 0.5 * (num/sqRt+sqRt);
+ 			sqRt = 0.5 * (num/sqRt+sqRt);
+
+// 		while(num-0.1<sqRt * sqRt && num+0.1>sqRt * sqRt) {
+// 			sqRt = 0.5 * (num/sqRt+sqRt);
+//		}
+		return sqRt;
 	}
 }
 
