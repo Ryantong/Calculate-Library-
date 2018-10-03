@@ -160,9 +160,16 @@ public class Calculate {
 	}
 	public static double sqrt(double num) {
 		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number and get a real number i-idiot");
-		double sqRt = 0.5 * (num/5+5);
+		double half = num/2;
+		double sqRt = 0.5 * (num/half+half);
+		sqRt = 0.5 * (num/sqRt+sqRt);
+		int intRt = (int)sqRt;
+		while(num != square(intRt)) {
 			sqRt = 0.5 * (num/sqRt+sqRt);
- 			sqRt = 0.5 * (num/sqRt+sqRt);
+		}
+//ok so for every times 10 add sqRt = 0.5 * (num/sqRt+sqRt);
+
+ 			
 
 // 		while(num-0.1<sqRt * sqRt && num+0.1>sqRt * sqRt) {
 // 			sqRt = 0.5 * (num/sqRt+sqRt);
