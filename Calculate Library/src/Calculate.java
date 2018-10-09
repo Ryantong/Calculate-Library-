@@ -166,7 +166,9 @@ public class Calculate {
 		int intRt = (int)sqRt;
 		while(num != square(intRt)) {
 			sqRt = 0.5 * (num/sqRt+sqRt);
+			intRt = (int)sqRt;
 		}
+		sqRt = intRt;
 //ok so for every times 10 add sqRt = 0.5 * (num/sqRt+sqRt);
 
  			
