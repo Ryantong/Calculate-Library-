@@ -26,6 +26,6 @@ public class DoMath {
 		System.out.println(Calculate.factorial(7));
 		System.out.println(Calculate.isPrime(3));
 		System.out.println(Calculate.gcf(-34, 12));
-		System.out.println(Calculate.sqrt(10000));
+		System.out.println(Calculate.sqrt(-1));
 	}
 }

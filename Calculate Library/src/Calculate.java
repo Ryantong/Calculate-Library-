@@ -168,14 +168,6 @@ public class Calculate {
 			sqRt = 0.5 * (num/sqRt+sqRt);
 			intRt = (int)sqRt;
 		}
-		sqRt = intRt;
-//ok so for every times 10 add sqRt = 0.5 * (num/sqRt+sqRt);
-
- 			
-
-// 		while(num-0.1<sqRt * sqRt && num+0.1>sqRt * sqRt) {
-// 			sqRt = 0.5 * (num/sqRt+sqRt);
-//		}
 		return sqRt;
 	}
 }
