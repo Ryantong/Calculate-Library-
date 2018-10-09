@@ -169,7 +169,7 @@ public class Calculate {
 			intRt = (int)sqRt;
 		}
 		return sqRt;
-	}
+	}//heck i made a thing to sqrt for int...now i have to rewrite,decimal to 2digits
 }
 
 
