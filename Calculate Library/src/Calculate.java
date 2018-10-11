@@ -7,6 +7,9 @@ public class Calculate {
 	public static int square(int number) {
 		return number * number;
 	}
+	public static double square(double number) {
+		return number * number;
+	}
 	//returns the cube of an integer 
 	public static int cube(int number) {
 		return number * number * number;
@@ -160,17 +163,17 @@ public class Calculate {
 	}
 	public static double sqrt(double num) {
 		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number and get a real number i-idiot");
-		double half = num/2;
-		double sqRt = 0.5 * (num/half+half);
-		sqRt = 0.5 * (num/sqRt+sqRt);
-		int intRt = (int)sqRt;
-		while(num != square(intRt)) {
+		int count = 0;
+		double sqRt = 0.5 * (num/5+5);
+		while(num != square(sqRt)) {
 			sqRt = 0.5 * (num/sqRt+sqRt);
-			intRt = (int)sqRt;
+			count++;
+			if(count == 10)throw new IllegalArgumentException("die...sorry");
 		}
+		sqRt = round2(sqRt);
 		return sqRt;
 	}//heck i made a thing to sqrt for int...now i have to rewrite,decimal to 2digits
-}
+}//idk anymore
 
 
 
