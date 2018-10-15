@@ -157,10 +157,10 @@ public class Calculate {
 			num2 = replace % num2;
 		}
 		double a = (double)num1;
-		Calculate.absValue(a);
+		absValue(a);
 		num1= (int)a;
 		return num1;
-	}
+	}//returns sqrt rounded to 2 dec places with Newton's method
 	public static double sqrt(double num) {
 		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number and get a real number i-idiot");
 		double value = 1; 
@@ -168,7 +168,7 @@ public class Calculate {
 			value = 0.5 * (num / value + value);
 		}
 		return round2(value);
-	}
+	}//returns a String with the value of the output of the quadform when inputed a,b,c unless no real roots
 	public static String quadForm(int a, int b, int c) {
 		if(discriminant(a, b, c) < 0) {
 			return "no real roots";
