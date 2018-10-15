@@ -27,5 +27,6 @@ public class DoMath {
 		System.out.println(Calculate.isPrime(3));
 		System.out.println(Calculate.gcf(-34, 12));
 		System.out.println(Calculate.sqrt(50));
+		System.out.println(Calculate.quadForm(2, -7, 1));
 	}
 }

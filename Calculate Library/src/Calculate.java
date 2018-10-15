@@ -163,17 +163,34 @@ public class Calculate {
 	}
 	public static double sqrt(double num) {
 		if(num < 0)throw new IllegalArgumentException("You can't sqrt a negative number and get a real number i-idiot");
-		int count = 0;
-		double sqRt = 0.5 * (num/5+5);
-		while(num != square(sqRt)) {
-			sqRt = 0.5 * (num/sqRt+sqRt);
-			count++;
-			if(count == 10)throw new IllegalArgumentException("die...sorry");
+		double value = 1; 
+		while(!(absValue(num - square(value)) < 0.001)) {
+			value = 0.5 * (num / value + value);
 		}
-		sqRt = round2(sqRt);
-		return sqRt;
-	}//heck i made a thing to sqrt for int...now i have to rewrite,decimal to 2digits
-}//idk anymore
+		return round2(value);
+	}
+	public static String quadForm(int a, int b, int c) {
+		if(discriminant(a, b, c) < 0) {
+			return "no real roots";
+		}
+		double plusAns = (-b + sqrt(discriminant(a,b,c))) / (2 * a);
+		double minusAns = (-b - sqrt(discriminant(a,b,c))) / (2 * a);
+		if(plusAns == minusAns) {
+			return round2(plusAns) + "";
+		}
+		return round2(plusAns) + " and " + round2(minusAns);
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
